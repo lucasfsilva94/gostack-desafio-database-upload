@@ -2,11 +2,12 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToOne,
-  JoinColumn
 } from 'typeorm';
+
 import Category from './Category';
 
 @Entity('transactions')
@@ -23,9 +24,9 @@ class Transaction {
   @Column('decimal')
   value: number;
 
-  @ManyToOne(() => Category, category => category.transaction, {eager: true})
+  @ManyToOne(() => Category, category => category.transaction, { eager: true })
   @JoinColumn({ name: 'category_id' })
-  category: Category
+  category: Category;
 
   @Column()
   category_id: string;

@@ -4,8 +4,9 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  OneToMany
+  OneToMany,
 } from 'typeorm';
+
 import Transaction from './Transaction';
 
 @Entity('categories')
